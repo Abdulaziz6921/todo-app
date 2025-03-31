@@ -1,0 +1,240 @@
+#root {
+  max-width: 550px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.todo-app {
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  animation: fadeIn 0.5s ease-in;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+h1 {
+  font-size: 100px;
+  font-weight: 100;
+  text-align: center;
+  color: rgb(0, 0, 0);
+  margin: 0;
+  padding: 20px 0;
+  transition: color 0.3s ease;
+}
+
+h1:hover {
+  color: rgb(255, 0, 0);
+}
+
+.todo-container {
+  background: #fff;
+  border-radius: 6px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1), 0 8px 16px rgba(0, 0, 0, 0.1);
+  margin: 0 auto;
+  position: relative;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.todo-container:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 12px 24px rgba(0, 0, 0, 0.1);
+}
+
+.todo-form {
+  padding: 16px;
+  border-bottom: 1px solid #ededed;
+  position: relative;
+}
+
+.todo-input {
+  width: 100%;
+  padding: 16px;
+  border: none;
+  background: transparent;
+  font-size: 24px;
+  font-weight: 300;
+  color: #4d4d4d;
+  box-sizing: border-box;
+  transition: all 0.3s ease;
+}
+
+.todo-input::placeholder {
+  font-style: italic;
+  color: #cacaca;
+  transition: color 0.3s ease;
+}
+
+.todo-input:focus {
+  outline: none;
+}
+
+.todo-input:focus::placeholder {
+  color: #b8b8b8;
+}
+
+.todo-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.todo-item {
+  display: flex;
+  align-items: center;
+  padding: 15px;
+  border-bottom: 1px solid #ededed;
+  font-size: 24px;
+  color: #4d4d4d;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+  animation: slideIn 0.3s ease-out;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.todo-item:hover {
+  background-color: #fafafa;
+  transform: translateX(4px);
+}
+
+.todo-checkbox {
+  -webkit-appearance: none;
+  appearance: none;
+  margin-right: 15px;
+  width: 28px;
+  height: 28px;
+  border: 2px solid #e6e6e6;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  position: relative;
+}
+
+.todo-checkbox:checked {
+  border-color: #5dc2af;
+  background-color: #5dc2af;
+}
+
+.todo-checkbox:checked::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(45deg);
+  width: 6px;
+  height: 12px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  margin-top: -2px;
+}
+
+.todo-checkbox:hover {
+  transform: scale(1.1);
+  border-color: #5dc2af;
+}
+
+.todo-text {
+  flex: 1;
+  text-align: left;
+  transition: color 0.3s ease, text-decoration 0.3s ease;
+}
+
+.completed .todo-text {
+  color: #d9d9d9;
+  text-decoration: line-through;
+  font-style: italic;
+}
+
+.todo-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 15px;
+  font-size: 14px;
+  color: #484848;
+  border-top: 1px solid #ededed;
+  background: #fff;
+  border-bottom-left-radius: 6px;
+  border-bottom-right-radius: 6px;
+}
+
+.items-left {
+  font-weight: 500;
+}
+
+.todo-filters {
+  display: flex;
+  gap: 8px;
+}
+
+.todo-filters button {
+  border: 1px solid transparent;
+  background: transparent;
+  padding: 5px 10px;
+  border-radius: 3px;
+  cursor: pointer;
+  color: #484848;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  font-size: 14px;
+  letter-spacing: 0.3px;
+}
+
+.todo-filters button.active {
+  border-color: rgba(175, 47, 47, 0.3);
+  color: #af2f2f;
+  font-weight: 600;
+}
+
+.todo-filters button:hover {
+  border-color: rgba(175, 47, 47, 0.2);
+  color: #af2f2f;
+}
+
+.clear-completed {
+  background: none;
+  border: none;
+  color: #484848;
+  cursor: pointer;
+  font-size: 14px;
+  padding: 5px 10px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  letter-spacing: 0.3px;
+}
+
+.clear-completed:hover {
+  color: #af2f2f;
+  text-decoration: underline;
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 64px;
+  }
+
+  .todo-input {
+    font-size: 20px;
+  }
+
+  .todo-item {
+    font-size: 18px;
+  }
+}
