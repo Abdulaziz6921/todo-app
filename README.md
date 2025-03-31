@@ -12,7 +12,7 @@
 
 ## Живая демо
 
-Посмотрите приложение в действии на [https://todo-app-by-abdulaziz.netlify.app/]
+Посмотрите приложение в действии на `https://todo-app-by-abdulaziz.netlify.app/`
 
 ## Установка
 
